@@ -18,5 +18,5 @@ Built on Pixel 3 API 25
 
 # Persistence
 Local persistance. Hillfort and User objects are persisted to local JSON files
-I have created users and hillforts to pre-load to the app, please add user.json and hillforts.json to the device file in /data/data/org.wit.hillforts/files/
+I have created users and hillforts to pre-load to the app, please upload user.json and hillforts.json to the device file in /data/data/org.wit.hillforts/files/ and then synchronize.
 If you do not pre-load the data, please begin by signing up first.
