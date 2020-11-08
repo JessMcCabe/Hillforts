@@ -3,17 +3,22 @@ package org.wit.hillforts.main
 import android.app.Application
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
-import org.wit.hillforts.models.HillfortModel
+import org.wit.hillforts.models.HillfortJSONStore
+import org.wit.hillforts.models.HillfortStore
+import org.wit.hillforts.models.UserJSONStore
+import org.wit.hillforts.models.UserStore
+
 
 class MainApp : Application(), AnkoLogger {
 
-    val hillforts = ArrayList<HillfortModel>()
-
+    //val hillforts = ArrayList<HillfortModel>()
+    lateinit var hillforts : HillfortStore
+    lateinit var users : UserStore
     override fun onCreate() {
         super.onCreate()
+        hillforts = HillfortJSONStore(applicationContext)
+        users = UserJSONStore(applicationContext)
         info("Hillfort started")
-        hillforts.add(HillfortModel("One", "About one"))
-        hillforts.add(HillfortModel("Two", "About two"))
-        hillforts.add(HillfortModel("Three", "About three"))
+
     }
 }
